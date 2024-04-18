@@ -8,13 +8,13 @@ import (
 	"github.com/odanaraujo/pelada-api/internal/domain/entity"
 )
 
-type AddPlayerUsecase struct{}
+type ConfirmePresenceUsecase struct{}
 
-func NewAddPlayerUsecase() *AddPlayerUsecase {
-	return &AddPlayerUsecase{}
+func NewConfirmePresenceUsecase() *ConfirmePresenceUsecase {
+	return &ConfirmePresenceUsecase{}
 }
 
-func (apu *AddPlayerUsecase) Execute(ctx context.Context, input dto.AddPlayersListDTO) error {
+func (apu *ConfirmePresenceUsecase) Execute(ctx context.Context, input dto.ConfirmePresenceDTO) error {
 
 	playersMonthlyList := make([]entity.PlayersMonthly, 0)
 	playersDiaryList := make([]entity.PlayersDiary, 0)

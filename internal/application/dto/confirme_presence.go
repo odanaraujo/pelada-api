@@ -1,6 +1,6 @@
 package dto
 
-type AddPlayersListDTO struct {
+type ConfirmePresenceDTO struct {
 	Players []Players `json:"players"`
 }
 

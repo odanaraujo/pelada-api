@@ -9,10 +9,10 @@ import (
 )
 
 func main() {
-	addPlayerUsecase := usecase.AddPlayerUsecase{}
+	addPlayerUsecase := usecase.ConfirmePresenceUsecase{}
 	playercontroller := controller.NewPlayerController(&addPlayerUsecase)
 
-	http.HandleFunc("/add-players", playercontroller.AddPlayerController)
+	http.HandleFunc("/confirm-presence", playercontroller.ConfirmePresenceController)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		errors.New(fmt.Sprintf("Unable to initialize server %v", err.Error()))
 	}

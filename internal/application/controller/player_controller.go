@@ -9,16 +9,16 @@ import (
 )
 
 type Playercontroller struct {
-	AddPlayerUsecase *usecase.AddPlayerUsecase
+	AddPlayerUsecase *usecase.ConfirmePresenceUsecase
 }
 
-func NewPlayerController(addPlayerUsecase *usecase.AddPlayerUsecase) *Playercontroller {
+func NewPlayerController(addPlayerUsecase *usecase.ConfirmePresenceUsecase) *Playercontroller {
 	return &Playercontroller{AddPlayerUsecase: addPlayerUsecase}
 }
 
-func (pc *Playercontroller) AddPlayerController(w http.ResponseWriter, r *http.Request) {
+func (pc *Playercontroller) ConfirmePresenceController(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("init controller")
-	var requestData dto.AddPlayersListDTO
+	var requestData dto.ConfirmePresenceDTO
 	if err := json.NewDecoder(r.Body).Decode(&requestData); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte(err.Error()))
